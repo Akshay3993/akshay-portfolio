@@ -5,7 +5,7 @@ import { cn } from '@/lib/utils';
 interface AnimatedSectionProps {
   children: React.ReactNode;
   className?: string;
-  animation?: 'fade-in' | 'fade-in-right' | 'fade-in-left' | 'scale-in' | 'bounce-in';
+  animation?: 'fade-in' | 'fade-in-right' | 'fade-in-left' | 'scale-in';
   delay?: number;
   once?: boolean;
   threshold?: number;
@@ -54,7 +54,7 @@ const AnimatedSection = ({
     <div
       ref={sectionRef}
       className={cn(
-        'opacity-0 transition-all duration-700',
+        'opacity-0',
         isVisible && `animate-${animation}`,
         isVisible && delay > 0 && `animate-delay-${delay}`,
         className

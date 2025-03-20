@@ -78,14 +78,14 @@ const Projects = () => {
     : projects.filter(project => project.category.includes(filter));
 
   return (
-    <section id="projects" className="section-padding bg-white dark:bg-slate-900">
+    <section id="projects" className="section-padding bg-white">
       <div className="container-custom">
         <AnimatedSection>
-          <h2 className="section-heading dark:text-white">My Projects</h2>
+          <h2 className="section-heading">My Projects</h2>
         </AnimatedSection>
         
         <AnimatedSection delay={100}>
-          <p className="section-subheading dark:text-gray-300">
+          <p className="section-subheading">
             Explore my portfolio of data science and machine learning projects.
           </p>
         </AnimatedSection>
@@ -98,7 +98,7 @@ const Projects = () => {
                 "px-4 py-2 rounded-full text-sm font-medium transition-all",
                 filter === "All"
                   ? "bg-primary text-primary-foreground shadow-md"
-                  : "bg-secondary hover:bg-secondary/80 dark:bg-slate-800 dark:hover:bg-slate-700 dark:text-white"
+                  : "bg-secondary hover:bg-secondary/80"
               )}
             >
               All
@@ -111,7 +111,7 @@ const Projects = () => {
                   "px-4 py-2 rounded-full text-sm font-medium transition-all",
                   filter === category
                     ? "bg-primary text-primary-foreground shadow-md"
-                    : "bg-secondary hover:bg-secondary/80 dark:bg-slate-800 dark:hover:bg-slate-700 dark:text-white"
+                    : "bg-secondary hover:bg-secondary/80"
                 )}
               >
                 {category}
@@ -128,7 +128,7 @@ const Projects = () => {
               delay={index * 100} 
               className="h-full"
             >
-              <div className="bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1 h-full flex flex-col dark:text-white">
+              <div className="bg-white rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1 h-full flex flex-col">
                 <div className="relative overflow-hidden h-56">
                   <img 
                     src={project.image} 
@@ -176,12 +176,12 @@ const Projects = () => {
                 </div>
                 <div className="p-6 flex flex-col flex-grow">
                   <h3 className="text-xl font-bold mb-3">{project.title}</h3>
-                  <p className="text-muted-foreground dark:text-gray-300 mb-6 flex-grow">{project.description}</p>
+                  <p className="text-muted-foreground mb-6 flex-grow">{project.description}</p>
                   <div className="flex flex-wrap gap-2 mt-auto">
                     {project.tags.map((tag) => (
                       <span 
                         key={tag} 
-                        className="text-xs font-medium py-1 px-2 rounded-full bg-secondary text-secondary-foreground dark:bg-blue-900/50 dark:text-blue-100"
+                        className="text-xs font-medium py-1 px-2 rounded-full bg-secondary text-secondary-foreground"
                       >
                         {tag}
                       </span>

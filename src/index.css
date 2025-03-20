@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -48,7 +48,7 @@
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 217.2 91.2% 59.8%;
+    --primary: 210 100% 50%;
     --primary-foreground: 222.2 47.4% 11.2%;
 
     --secondary: 217.2 32.6% 17.5%;
@@ -57,7 +57,7 @@
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
 
-    --accent: 217.2 91.2% 59.8%;
+    --accent: 210 100% 50%;
     --accent-foreground: 210 40% 98%;
 
     --destructive: 0 62.8% 30.6%;
@@ -79,7 +79,7 @@
   }
   
   body {
-    @apply bg-background text-foreground font-sans transition-colors duration-300;
+    @apply bg-background text-foreground font-sans;
   }
   
   h1, h2, h3, h4, h5, h6 {
@@ -99,7 +99,7 @@
   }
   
   .glass {
-    @apply bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border border-white/20 dark:border-white/10;
+    @apply bg-white/80 backdrop-blur-md border border-white/20;
   }
   
   .section-padding {
@@ -147,13 +147,8 @@
   .nav-link-active {
     @apply text-foreground after:scale-x-100;
   }
-  
-  .data-particle {
-    @apply absolute rounded-full opacity-20 animate-float pointer-events-none;
-  }
 }
 
-/* Animations */
 .animate-delay-100 {
   animation-delay: 100ms;
 }
@@ -196,140 +191,4 @@
 
 .shimmer {
   @apply relative overflow-hidden before:absolute before:inset-0 before:-translate-x-full before:animate-shimmer before:bg-gradient-to-r before:from-transparent before:via-white/20 before:to-transparent;
-}
-
-/* Matrix Digital Rain Effect */
-@keyframes matrix-rain {
-  0% {
-    opacity: 0;
-    transform: translateY(-100px);
-  }
-  10% {
-    opacity: 1;
-  }
-  90% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-    transform: translateY(100vh);
-  }
-}
-
-.matrix-rain {
-  animation: matrix-rain 8s linear infinite;
-  color: rgba(0, 255, 0, 0.7);
-  position: absolute;
-  font-family: monospace;
-  font-size: 14px;
-  pointer-events: none;
-}
-
-.dark .matrix-rain {
-  color: rgba(0, 255, 0, 0.4);
-}
-
-/* Data nodes connection animation */
-@keyframes data-pulse {
-  0%, 100% {
-    transform: scale(1);
-    opacity: 0.3;
-  }
-  50% {
-    transform: scale(1.2);
-    opacity: 0.7;
-  }
-}
-
-.data-node {
-  animation: data-pulse 4s ease-in-out infinite;
-}
-
-/* Typewriter cursor blink */
-@keyframes blink {
-  0%, 100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
-}
-
-.cursor-blink {
-  animation: blink 1s step-end infinite;
-}
-
-/* Bounce in animation */
-@keyframes bounce-in {
-  0% {
-    opacity: 0;
-    transform: scale(0.3);
-  }
-  50% {
-    opacity: 1;
-    transform: scale(1.05);
-  }
-  70% {
-    transform: scale(0.9);
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
-.animate-bounce-in {
-  animation: bounce-in 0.6s ease-out forwards;
-}
-
-/* Custom Scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  @apply bg-secondary/50;
-}
-
-::-webkit-scrollbar-thumb {
-  @apply bg-primary/50 rounded-full;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  @apply bg-primary/70;
-}
-
-/* Profile image animation */
-@keyframes profile-border-spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-.profile-border {
-  animation: profile-border-spin 12s linear infinite;
-}
-
-/* Data flow animation */
-@keyframes data-flow {
-  0% {
-    stroke-dashoffset: 1000;
-    opacity: 0.2;
-  }
-  50% {
-    opacity: 0.7;
-  }
-  100% {
-    stroke-dashoffset: 0;
-    opacity: 0.2;
-  }
-}
-
-.data-flow-path {
-  stroke-dasharray: 1000;
-  stroke-dashoffset: 1000;
-  animation: data-flow 10s linear infinite;
 }
