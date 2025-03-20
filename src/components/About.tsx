@@ -1,102 +1,102 @@
 
-import { FileText, Github, Linkedin, Mail } from 'lucide-react';
 import AnimatedSection from './ui/AnimatedSection';
+import ExperienceTimeline from './ExperienceTimeline';
 
 const About = () => {
   return (
-    <section id="about" className="section-padding bg-white">
-      <div className="container-custom">
-        <AnimatedSection>
-          <h2 className="section-heading">About Me</h2>
-        </AnimatedSection>
-        
-        <AnimatedSection delay={100}>
-          <p className="section-subheading">
-            Get to know my background, interests, and what drives me in the field of Data Science.
-          </p>
-        </AnimatedSection>
-        
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-12">
-          <AnimatedSection animation="fade-in-right">
-            <div className="relative">
-              <div className="absolute -bottom-6 -right-6 w-3/4 h-3/4 bg-primary/5 rounded-xl"></div>
-              <div className="relative bg-white shadow-lg rounded-xl overflow-hidden">
-                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-blue-400"></div>
-                <img 
-                  src="https://images.unsplash.com/photo-1649972904349-6e44c42644a7" 
-                  alt="Portrait" 
-                  className="w-full h-full object-cover rounded-xl"
-                  style={{ maxHeight: '420px' }}
-                />
-              </div>
-            </div>
+    <>
+      <section id="about" className="section-padding">
+        <div className="container-custom">
+          <AnimatedSection>
+            <h2 className="section-heading">About Me</h2>
           </AnimatedSection>
           
-          <AnimatedSection animation="fade-in-left" delay={200}>
-            <div className="space-y-6">
-              <h3 className="text-2xl font-bold">Computer Engineering Student</h3>
-              <p className="text-muted-foreground">
-                I'm a third-year Computer Engineering student with a passion for data analytics, 
-                data science, and machine learning. My journey in technology began with a 
-                curiosity about how data can be leveraged to solve real-world problems and 
-                has evolved into a dedicated pursuit of expertise in these fields.
-              </p>
-              <p className="text-muted-foreground">
-                Through my academic projects and personal initiatives, I've gained hands-on 
-                experience in data processing, statistical analysis, and developing machine 
-                learning models. I'm particularly interested in the applications of AI in 
-                healthcare, finance, and environmental sustainability.
-              </p>
-              <p className="text-muted-foreground">
-                Beyond technical skills, I value collaboration, continuous learning, and 
-                the ethical implications of technology. I'm always eager to connect with 
-                like-minded professionals and explore opportunities where I can contribute 
-                and grow.
-              </p>
-              
-              <div className="pt-4 space-y-4">
-                <div className="flex flex-wrap items-center gap-4">
-                  <a 
-                    href="#" 
-                    className="btn btn-outline flex items-center gap-2 hover:bg-primary hover:text-primary-foreground hover:border-primary"
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                  >
-                    <FileText size={18} />
-                    Resume
-                  </a>
-                  <a 
-                    href="#" 
-                    className="btn btn-outline flex items-center gap-2 hover:bg-[#0077B5] hover:text-white hover:border-[#0077B5]"
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                  >
-                    <Linkedin size={18} />
-                    LinkedIn
-                  </a>
-                  <a 
-                    href="#" 
-                    className="btn btn-outline flex items-center gap-2 hover:bg-[#333] hover:text-white hover:border-[#333]"
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                  >
-                    <Github size={18} />
-                    GitHub
-                  </a>
-                  <a 
-                    href="mailto:your.email@example.com" 
-                    className="btn btn-outline flex items-center gap-2 hover:bg-primary hover:text-primary-foreground hover:border-primary"
-                  >
-                    <Mail size={18} />
-                    Email
-                  </a>
+          <AnimatedSection delay={100}>
+            <p className="section-subheading">
+              I'm a Computer Engineering student passionate about data science, machine learning, and creating data-driven solutions.
+            </p>
+          </AnimatedSection>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mt-12">
+            <AnimatedSection animation="fade-in-right">
+              <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-border/50">
+                <h3 className="text-2xl font-semibold mb-4 text-primary">Who I Am</h3>
+                <div className="space-y-4 text-muted-foreground">
+                  <p>
+                    I'm Akshay Yadav, a Computer Engineering student with a strong foundation in data analytics, 
+                    data science, and machine learning. My academic journey has equipped me with the skills to 
+                    transform complex data into actionable insights and develop innovative solutions.
+                  </p>
+                  <p>
+                    My expertise lies in Python, SQL, and data visualization tools like Power BI and Tableau. 
+                    I'm passionate about applying machine learning algorithms to solve real-world problems, 
+                    particularly in the financial domain.
+                  </p>
+                  <p>
+                    When I'm not coding or analyzing data, I'm actively involved in community service through 
+                    the National Service Scheme (NSS) and organizing various college events.
+                  </p>
                 </div>
               </div>
-            </div>
-          </AnimatedSection>
+            </AnimatedSection>
+            
+            <AnimatedSection animation="fade-in-left" delay={200}>
+              <div className="space-y-6">
+                <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-border/50">
+                  <h3 className="text-xl font-semibold mb-4 text-primary">Education Highlights</h3>
+                  <ul className="space-y-3">
+                    <li className="flex items-start gap-2">
+                      <span className="text-primary text-lg">•</span>
+                      <div>
+                        <span className="font-medium">Bachelor of Technology in Computer Engineering</span>
+                        <p className="text-muted-foreground text-sm">Pimpri Chinchwad College of Engineering, Pune</p>
+                        <p className="text-muted-foreground text-sm">CGPA: 8.26</p>
+                      </div>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-primary text-lg">•</span>
+                      <div>
+                        <span className="font-medium">HSC Examination</span>
+                        <p className="text-muted-foreground text-sm">88.00% in HSC Boards</p>
+                        <p className="text-muted-foreground text-sm">98.90 percentile in CET, 88 percentile in JEE</p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                
+                <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-border/50">
+                  <h3 className="text-xl font-semibold mb-4 text-primary">Contact Information</h3>
+                  <ul className="space-y-3">
+                    <li className="flex items-center gap-2">
+                      <span className="text-primary text-lg">•</span>
+                      <span className="font-medium">Email:</span>
+                      <a href="mailto:helloakshay20@gmail.com" className="text-blue-600 hover:underline">helloakshay20@gmail.com</a>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="text-primary text-lg">•</span>
+                      <span className="font-medium">Phone:</span>
+                      <a href="tel:+919730986643" className="text-blue-600 hover:underline">+91 9730986643</a>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="text-primary text-lg">•</span>
+                      <span className="font-medium">LinkedIn:</span>
+                      <a href="https://linkedin.com/in/akshay-yadav-16ak" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">akshay-yadav-16ak</a>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="text-primary text-lg">•</span>
+                      <span className="font-medium">GitHub:</span>
+                      <a href="https://github.com/Akshay3993" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Akshay3993</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </AnimatedSection>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+      
+      <ExperienceTimeline />
+    </>
   );
 };
 

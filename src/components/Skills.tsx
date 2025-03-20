@@ -1,7 +1,8 @@
 
-import { BarChart2, Database, FileCode, GitBranch, LineChart, Server, Cpu, Settings } from 'lucide-react';
+import { BarChart2, Database, FileCode, GitBranch, LineChart, Server, Cpu, Settings, Terminal, Code, Search, TrendingUp } from 'lucide-react';
 import AnimatedSection from './ui/AnimatedSection';
 import { cn } from '@/lib/utils';
+import SkillsChart from './SkillsChart';
 
 interface Skill {
   name: string;
@@ -14,25 +15,25 @@ const skills: Skill[] = [
   // Data Science
   { name: 'Data Analysis', level: 90, category: 'data-science', icon: <BarChart2 className="h-5 w-5" /> },
   { name: 'Data Visualization', level: 85, category: 'data-science', icon: <LineChart className="h-5 w-5" /> },
-  { name: 'Statistical Modeling', level: 80, category: 'data-science', icon: <BarChart2 className="h-5 w-5" /> },
-  { name: 'SQL & NoSQL', level: 75, category: 'data-science', icon: <Database className="h-5 w-5" /> },
+  { name: 'SQL & NoSQL', level: 80, category: 'data-science', icon: <Database className="h-5 w-5" /> },
+  { name: 'Statistical Modeling', level: 75, category: 'data-science', icon: <TrendingUp className="h-5 w-5" /> },
   
   // Machine Learning
   { name: 'Supervised Learning', level: 85, category: 'machine-learning', icon: <Cpu className="h-5 w-5" /> },
-  { name: 'Neural Networks', level: 75, category: 'machine-learning', icon: <Cpu className="h-5 w-5" /> },
-  { name: 'NLP', level: 70, category: 'machine-learning', icon: <FileCode className="h-5 w-5" /> },
-  { name: 'Computer Vision', level: 65, category: 'machine-learning', icon: <Cpu className="h-5 w-5" /> },
+  { name: 'TensorFlow/LSTM', level: 80, category: 'machine-learning', icon: <Server className="h-5 w-5" /> },
+  { name: 'NLP', level: 75, category: 'machine-learning', icon: <FileCode className="h-5 w-5" /> },
+  { name: 'Anomaly Detection', level: 80, category: 'machine-learning', icon: <Search className="h-5 w-5" /> },
   
   // Programming
-  { name: 'Python', level: 90, category: 'programming', icon: <FileCode className="h-5 w-5" /> },
-  { name: 'R', level: 75, category: 'programming', icon: <FileCode className="h-5 w-5" /> },
-  { name: 'JavaScript', level: 70, category: 'programming', icon: <FileCode className="h-5 w-5" /> },
-  { name: 'Java', level: 65, category: 'programming', icon: <FileCode className="h-5 w-5" /> },
+  { name: 'Python', level: 90, category: 'programming', icon: <Code className="h-5 w-5" /> },
+  { name: 'R', level: 75, category: 'programming', icon: <Terminal className="h-5 w-5" /> },
+  { name: 'SQL', level: 85, category: 'programming', icon: <Database className="h-5 w-5" /> },
+  { name: 'C++', level: 70, category: 'programming', icon: <FileCode className="h-5 w-5" /> },
   
   // Tools
-  { name: 'TensorFlow/Keras', level: 80, category: 'tools', icon: <Settings className="h-5 w-5" /> },
-  { name: 'PyTorch', level: 75, category: 'tools', icon: <Settings className="h-5 w-5" /> },
-  { name: 'Pandas/NumPy', level: 90, category: 'tools', icon: <Settings className="h-5 w-5" /> },
+  { name: 'Jupyter Notebook', level: 90, category: 'tools', icon: <Settings className="h-5 w-5" /> },
+  { name: 'Power BI', level: 85, category: 'tools', icon: <BarChart2 className="h-5 w-5" /> },
+  { name: 'Tableau', level: 80, category: 'tools', icon: <LineChart className="h-5 w-5" /> },
   { name: 'Git/GitHub', level: 85, category: 'tools', icon: <GitBranch className="h-5 w-5" /> },
 ];
 
@@ -78,7 +79,7 @@ const Skills = () => {
   }, {});
 
   return (
-    <section id="skills" className="section-padding bg-secondary/50">
+    <section id="skills" className="section-padding bg-secondary/30">
       <div className="container-custom">
         <AnimatedSection>
           <h2 className="section-heading">My Skills</h2>
@@ -90,6 +91,10 @@ const Skills = () => {
           </p>
         </AnimatedSection>
         
+        <AnimatedSection animation="fade-in" delay={200} className="mb-12">
+          <SkillsChart />
+        </AnimatedSection>
+        
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mt-12">
           {Object.keys(skillsByCategory).map((category, index) => (
             <AnimatedSection 
@@ -97,7 +102,7 @@ const Skills = () => {
               animation={index % 2 === 0 ? 'fade-in-right' : 'fade-in-left'} 
               delay={100 * index}
             >
-              <div className="bg-white rounded-xl shadow-lg overflow-hidden h-full">
+              <div className="bg-white/90 backdrop-blur-sm rounded-xl shadow-lg overflow-hidden h-full transition-all duration-300 hover:shadow-xl hover:translate-y-[-4px]">
                 <div className={cn('p-4 flex items-center gap-3', categoryLabels[category as keyof CategoryLabel].color)}>
                   {categoryLabels[category as keyof CategoryLabel].icon}
                   <h3 className="text-lg font-semibold">
