@@ -13,12 +13,20 @@ import { useEffect } from 'react';
 const Index = () => {
   // Create matrix digital rain effect for data background
   useEffect(() => {
+    // Check if dark mode is enabled
+    const isDarkMode = document.documentElement.classList.contains('dark');
+    
     const createDataParticle = () => {
       const particle = document.createElement('div');
       const size = Math.random() * 20 + 10;
       particle.style.width = `${size}px`;
       particle.style.height = `${size}px`;
-      particle.style.backgroundColor = Math.random() > 0.5 ? 'rgba(59, 130, 246, 0.1)' : 'rgba(99, 102, 241, 0.1)';
+      
+      // Adjust colors based on mode
+      particle.style.backgroundColor = isDarkMode 
+        ? (Math.random() > 0.5 ? 'rgba(59, 130, 246, 0.15)' : 'rgba(99, 102, 241, 0.15)')
+        : (Math.random() > 0.5 ? 'rgba(59, 130, 246, 0.08)' : 'rgba(99, 102, 241, 0.08)');
+        
       particle.style.position = 'fixed';
       particle.style.borderRadius = '50%';
       particle.style.top = `${Math.random() * 100}vh`;
@@ -40,7 +48,7 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col dark:bg-slate-900">
       <Header />
       <main>
         <Hero />

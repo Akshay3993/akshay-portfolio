@@ -245,6 +245,43 @@
   animation: data-pulse 4s ease-in-out infinite;
 }
 
+/* Typewriter cursor blink */
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+.cursor-blink {
+  animation: blink 1s step-end infinite;
+}
+
+/* Bounce in animation */
+@keyframes bounce-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-bounce-in {
+  animation: bounce-in 0.6s ease-out forwards;
+}
+
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
@@ -274,4 +311,25 @@
 
 .profile-border {
   animation: profile-border-spin 12s linear infinite;
+}
+
+/* Data flow animation */
+@keyframes data-flow {
+  0% {
+    stroke-dashoffset: 1000;
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 0.2;
+  }
+}
+
+.data-flow-path {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: data-flow 10s linear infinite;
 }
