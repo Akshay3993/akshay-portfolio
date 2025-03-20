@@ -1,6 +1,8 @@
 
 import { Award, Calendar, ExternalLink } from 'lucide-react';
 import AnimatedSection from './ui/AnimatedSection';
+import { useState } from 'react';
+import { cn } from '@/lib/utils';
 
 interface Certification {
   id: number;
@@ -52,9 +54,13 @@ const certifications: Certification[] = [
 ];
 
 const Certifications = () => {
+  const [hoveredCert, setHoveredCert] = useState<number | null>(null);
+  
   return (
-    <section id="certifications" className="section-padding bg-secondary/50">
-      <div className="container-custom">
+    <section id="certifications" className="section-padding relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-b from-slate-900/0 via-slate-900/20 to-slate-900/0"></div>
+      
+      <div className="container-custom relative z-10">
         <AnimatedSection>
           <h2 className="section-heading">Certifications</h2>
         </AnimatedSection>
@@ -72,20 +78,52 @@ const Certifications = () => {
               animation={index % 2 === 0 ? 'fade-in-right' : 'fade-in-left'} 
               delay={100 * index}
             >
-              <div className="bg-white rounded-xl shadow-lg overflow-hidden h-full transition-all duration-300 hover:shadow-xl hover:-translate-y-1 group">
+              <div 
+                className={cn(
+                  "glass rounded-xl overflow-hidden h-full transition-all duration-500 group hover:shadow-[0_0_30px_rgba(37,99,235,0.15)] border border-white/5",
+                  hoveredCert === cert.id && "border-primary/30"
+                )}
+                onMouseEnter={() => setHoveredCert(cert.id)}
+                onMouseLeave={() => setHoveredCert(null)}
+              >
                 <div className="flex flex-col h-full">
-                  <div className="relative h-32 overflow-hidden">
+                  <div className="relative h-40 overflow-hidden">
                     <img 
                       src={cert.image} 
                       alt={cert.title} 
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-40"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/50 to-transparent"></div>
-                    <div className="absolute bottom-0 left-0 p-4">
+                    
+                    {/* Animated badge */}
+                    <div 
+                      className={cn(
+                        "absolute -top-16 -right-16 w-32 h-32 bg-primary/20 rounded-full backdrop-blur-xl transition-transform duration-500 border border-primary/20",
+                        hoveredCert === cert.id ? "transform translate-x-8 translate-y-8" : ""
+                      )}
+                    />
+                    
+                    <div className="absolute bottom-0 left-0 p-4 z-10">
                       <div className="flex items-center">
-                        <Award className="text-primary bg-white rounded-full p-1 h-7 w-7 mr-2" />
+                        <Award className="text-primary bg-slate-800/80 rounded-full p-1 h-7 w-7 mr-2" />
                         <h3 className="text-white font-bold text-lg">{cert.title}</h3>
                       </div>
+                    </div>
+                    
+                    {/* Data-themed overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/80 to-transparent pointer-events-none">
+                      {[...Array(6)].map((_, i) => (
+                        <div
+                          key={i}
+                          className="absolute bg-primary/20 h-px"
+                          style={{
+                            left: 0,
+                            right: 0,
+                            top: `${30 + i * 10}%`,
+                            height: `${i % 2 === 0 ? '2px' : '1px'}`,
+                            opacity: 0.5 - i * 0.05,
+                          }}
+                        />
+                      ))}
                     </div>
                   </div>
                   
@@ -104,12 +142,18 @@ const Certifications = () => {
                     {cert.link && (
                       <a 
                         href={cert.link} 
-                        className="inline-flex items-center text-primary hover:text-primary/80 text-sm font-medium group mt-auto"
+                        className="inline-flex items-center text-primary hover:text-primary/80 text-sm font-medium group mt-auto relative overflow-hidden"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        <span>View Certificate</span>
-                        <ExternalLink className="h-4 w-4 ml-1 transition-transform group-hover:translate-x-1" />
+                        <span className="relative z-10">View Certificate</span>
+                        <ExternalLink 
+                          className={cn(
+                            "h-4 w-4 ml-1 transition-transform",
+                            hoveredCert === cert.id ? "translate-x-1" : ""
+                          )}
+                        />
+                        <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
                       </a>
                     )}
                   </div>
