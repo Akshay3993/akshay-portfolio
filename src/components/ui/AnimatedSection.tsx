@@ -54,7 +54,7 @@ const AnimatedSection = ({
     <div
       ref={sectionRef}
       className={cn(
-        'opacity-0',
+        'opacity-0 transition-all duration-700',
         isVisible && `animate-${animation}`,
         isVisible && delay > 0 && `animate-delay-${delay}`,
         className
