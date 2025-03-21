@@ -12,7 +12,7 @@ const About = () => {
         
         <AnimatedSection delay={100}>
           <p className="section-subheading">
-            Get to know my background, interests, and what drives me in the field of Data Science.
+            Get to know my background, interests, and what drives me in the field of Data Analytics.
           </p>
         </AnimatedSection>
         
@@ -23,11 +23,26 @@ const About = () => {
               <div className="relative bg-white shadow-lg rounded-xl overflow-hidden">
                 <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-blue-400"></div>
                 <img 
-                  src="https://images.unsplash.com/photo-1649972904349-6e44c42644a7" 
+                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" 
                   alt="Portrait" 
                   className="w-full h-full object-cover rounded-xl"
                   style={{ maxHeight: '420px' }}
                 />
+                
+                {/* Floating Badges */}
+                <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full shadow-md">
+                  <div className="flex items-center space-x-2">
+                    <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                    <span className="text-sm font-medium">Data Enthusiast</span>
+                  </div>
+                </div>
+                
+                <div className="absolute bottom-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full shadow-md">
+                  <div className="flex items-center space-x-2">
+                    <span className="text-sm font-medium">Engineering Student</span>
+                    <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
+                  </div>
+                </div>
               </div>
             </div>
           </AnimatedSection>
@@ -36,22 +51,20 @@ const About = () => {
             <div className="space-y-6">
               <h3 className="text-2xl font-bold">Computer Engineering Student</h3>
               <p className="text-muted-foreground">
-                I'm a third-year Computer Engineering student with a passion for data analytics, 
-                data science, and machine learning. My journey in technology began with a 
-                curiosity about how data can be leveraged to solve real-world problems and 
-                has evolved into a dedicated pursuit of expertise in these fields.
+                I am a third-year engineering student specializing in data analytics, with hands-on 
+                experience in Power BI, SQL, and Excel. I have worked on various projects that involve 
+                data visualization, business intelligence, and predictive analysis.
               </p>
               <p className="text-muted-foreground">
                 Through my academic projects and personal initiatives, I've gained hands-on 
-                experience in data processing, statistical analysis, and developing machine 
-                learning models. I'm particularly interested in the applications of AI in 
-                healthcare, finance, and environmental sustainability.
+                experience in data processing, statistical analysis, and developing visualizations 
+                that communicate insights effectively. I'm particularly interested in the applications 
+                of data analytics in business intelligence, finance, and marketing.
               </p>
               <p className="text-muted-foreground">
-                Beyond technical skills, I value collaboration, continuous learning, and 
-                the ethical implications of technology. I'm always eager to connect with 
-                like-minded professionals and explore opportunities where I can contribute 
-                and grow.
+                Currently, I am seeking internship opportunities to apply my skills and gain industry 
+                experience. I value collaboration, continuous learning, and the ethical implications 
+                of data-driven decision making.
               </p>
               
               <div className="pt-4 space-y-4">

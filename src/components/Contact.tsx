@@ -1,5 +1,5 @@
 
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { Mail, MapPin, MessageSquare, Send } from 'lucide-react';
 import AnimatedSection from './ui/AnimatedSection';
 import { cn } from '@/lib/utils';
@@ -12,6 +12,7 @@ const Contact = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const formRef = useRef<HTMLFormElement>(null);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -42,8 +43,29 @@ const Contact = () => {
     }, 1500);
   };
 
+  // Generate random particles for the background
+  const renderParticles = () => {
+    const particles = [];
+    for (let i = 0; i < 10; i++) {
+      const size = Math.random() * 5 + 1;
+      const style = {
+        width: `${size}px`,
+        height: `${size}px`,
+        left: `${Math.random() * 100}%`,
+        top: `${Math.random() * 100}%`,
+        animationDelay: `${Math.random() * 5}s`,
+        animationDuration: `${Math.random() * 10 + 10}s`,
+      };
+      particles.push(<div key={i} className="particle" style={style} />);
+    }
+    return particles;
+  };
+
   return (
-    <section id="contact" className="section-padding bg-white">
+    <section id="contact" className="section-padding bg-white relative overflow-hidden">
+      {/* Add subtle particles */}
+      {renderParticles()}
+      
       <div className="container-custom">
         <AnimatedSection>
           <h2 className="section-heading">Get In Touch</h2>
@@ -67,7 +89,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h4 className="font-medium">Email</h4>
-                    <a href="mailto:your.email@example.com" className="text-muted-foreground hover:text-primary">
+                    <a href="mailto:your.email@example.com" className="text-muted-foreground hover:text-primary transition-colors">
                       your.email@example.com
                     </a>
                   </div>
@@ -92,18 +114,31 @@ const Contact = () => {
                   <div>
                     <h4 className="font-medium">Social</h4>
                     <div className="space-y-2 mt-2">
-                      <a href="#" className="block text-muted-foreground hover:text-primary">
+                      <a href="#" className="block text-muted-foreground hover:text-primary transition-colors">
                         LinkedIn
                       </a>
-                      <a href="#" className="block text-muted-foreground hover:text-primary">
+                      <a href="#" className="block text-muted-foreground hover:text-primary transition-colors">
                         GitHub
                       </a>
-                      <a href="#" className="block text-muted-foreground hover:text-primary">
+                      <a href="#" className="block text-muted-foreground hover:text-primary transition-colors">
                         Twitter
                       </a>
                     </div>
                   </div>
                 </div>
+              </div>
+              
+              {/* Data Points Visualization */}
+              <div className="mt-12 relative h-40 bg-gradient-to-r from-blue-50 to-white rounded-lg p-4 overflow-hidden">
+                <h4 className="text-sm font-medium text-gray-600 mb-2">Connect with me</h4>
+                <div className="absolute w-3 h-3 bg-primary/70 rounded-full top-1/4 left-1/4 animate-pulse"></div>
+                <div className="absolute w-4 h-4 bg-blue-400/70 rounded-full top-2/3 left-1/3 animate-pulse" style={{animationDelay: '1s'}}></div>
+                <div className="absolute w-3 h-3 bg-green-400/70 rounded-full top-1/2 right-1/3 animate-pulse" style={{animationDelay: '0.5s'}}></div>
+                <div className="absolute w-2 h-2 bg-yellow-400/70 rounded-full bottom-1/4 right-1/4 animate-pulse" style={{animationDelay: '1.5s'}}></div>
+                <div className="absolute w-40 h-1 bg-gradient-to-r from-primary/50 to-transparent top-1/4 left-1/4 translate-y-1"></div>
+                <div className="absolute w-40 h-1 bg-gradient-to-r from-blue-400/50 to-transparent top-2/3 left-1/3 translate-y-1"></div>
+                <div className="absolute w-40 h-1 bg-gradient-to-l from-green-400/50 to-transparent top-1/2 right-1/3 translate-y-1"></div>
+                <div className="absolute w-40 h-1 bg-gradient-to-l from-yellow-400/50 to-transparent bottom-1/4 right-1/4 translate-y-1"></div>
               </div>
             </div>
           </AnimatedSection>
@@ -122,7 +157,7 @@ const Contact = () => {
                 </div>
               ) : null}
               
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
                 <div className="space-y-2">
                   <label htmlFor="name" className="block text-sm font-medium">
                     Your Name
