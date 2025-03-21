@@ -20,32 +20,32 @@ const SkillCard = ({
 }: SkillCardProps) => {
   return (
     <div 
-      className="skill-card h-full cursor-pointer"
+      className="skill-card h-full cursor-pointer shadow-md hover:shadow-xl transition-all duration-300"
       onMouseEnter={() => onMouseEnter(skill)}
       onMouseLeave={onMouseLeave}
     >
       <div className={cn(
-        "w-12 h-12 rounded-full flex items-center justify-center mb-4 transition-all",
+        "w-14 h-14 rounded-full flex items-center justify-center mb-4 transition-all mx-auto",
         activeSkill?.name === skill.name 
-          ? categoryLabels[skill.category].bgColor + " text-white"
+          ? categoryLabels[skill.category].bgColor + " text-white transform scale-110"
           : "bg-white/10 " + categoryLabels[skill.category].color
       )}>
         {skill.icon}
       </div>
       
-      <h3 className="text-lg font-semibold text-white mb-2">{skill.name}</h3>
+      <h3 className="text-xl font-semibold text-white mb-2 text-center">{skill.name}</h3>
       
-      <p className="text-gray-400 text-sm mb-4">{skill.description}</p>
+      <p className="text-gray-300 text-sm mb-4 text-center">{skill.description}</p>
       
       <div className="mt-auto">
         <div className="flex justify-between items-center mb-1">
           <span className="text-xs text-gray-400">Proficiency</span>
           <span className="text-xs text-gray-300">{skill.level}%</span>
         </div>
-        <div className="h-1.5 w-full bg-white/10 rounded-full overflow-hidden">
+        <div className="h-2 w-full bg-white/10 rounded-full overflow-hidden">
           <div 
             className={cn(
-              "h-full rounded-full transition-all duration-1000",
+              "h-full rounded-full transition-all duration-1000 shadow-lg",
               categoryLabels[skill.category].bgColor
             )}
             style={{ 

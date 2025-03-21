@@ -7,11 +7,11 @@ const About = () => {
     <section id="about" className="section-padding bg-white">
       <div className="container-custom">
         <AnimatedSection>
-          <h2 className="section-heading">About Me</h2>
+          <h2 className="section-heading text-gray-800">About Me</h2>
         </AnimatedSection>
         
         <AnimatedSection delay={100}>
-          <p className="section-subheading">
+          <p className="section-subheading text-gray-600">
             Get to know my background, interests, and what drives me in the field of Data Analytics.
           </p>
         </AnimatedSection>
@@ -33,13 +33,13 @@ const About = () => {
                 <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full shadow-md">
                   <div className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                    <span className="text-sm font-medium">Data Enthusiast</span>
+                    <span className="text-sm font-medium text-gray-800">Data Enthusiast</span>
                   </div>
                 </div>
                 
                 <div className="absolute bottom-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full shadow-md">
                   <div className="flex items-center space-x-2">
-                    <span className="text-sm font-medium">Engineering Student</span>
+                    <span className="text-sm font-medium text-gray-800">Engineering Student</span>
                     <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
                   </div>
                 </div>
@@ -49,19 +49,19 @@ const About = () => {
           
           <AnimatedSection animation="fade-in-left" delay={200}>
             <div className="space-y-6">
-              <h3 className="text-2xl font-bold">Computer Engineering Student</h3>
-              <p className="text-muted-foreground">
+              <h3 className="text-2xl font-bold text-gray-800">Computer Engineering Student</h3>
+              <p className="text-gray-700">
                 I am a third-year engineering student specializing in data analytics, with hands-on 
                 experience in Power BI, SQL, and Excel. I have worked on various projects that involve 
                 data visualization, business intelligence, and predictive analysis.
               </p>
-              <p className="text-muted-foreground">
+              <p className="text-gray-700">
                 Through my academic projects and personal initiatives, I've gained hands-on 
                 experience in data processing, statistical analysis, and developing visualizations 
                 that communicate insights effectively. I'm particularly interested in the applications 
                 of data analytics in business intelligence, finance, and marketing.
               </p>
-              <p className="text-muted-foreground">
+              <p className="text-gray-700">
                 Currently, I am seeking internship opportunities to apply my skills and gain industry 
                 experience. I value collaboration, continuous learning, and the ethical implications 
                 of data-driven decision making.
