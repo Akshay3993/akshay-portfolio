@@ -1,5 +1,5 @@
 
-import { ArrowUp, Github, Linkedin, Mail, Twitter, Database, BarChart2 } from 'lucide-react';
+import { ArrowUp, Github, Linkedin, Mail, Instagram, Database } from 'lucide-react';
 import { useEffect, useState } from 'react';
 
 const Footer = () => {
@@ -66,7 +66,7 @@ const Footer = () => {
           
           <div className="flex space-x-6 mb-8">
             <a 
-              href="#" 
+              href="https://linkedin.com/in/akshay-yadav-16ak" 
               className="p-2 text-foreground/60 hover:text-primary transition-colors rounded-full hover:bg-primary/5"
               aria-label="LinkedIn"
               target="_blank"
@@ -75,7 +75,7 @@ const Footer = () => {
               <Linkedin size={20} />
             </a>
             <a 
-              href="#" 
+              href="https://github.com/Akshay3993" 
               className="p-2 text-foreground/60 hover:text-primary transition-colors rounded-full hover:bg-primary/5"
               aria-label="GitHub"
               target="_blank"
@@ -84,16 +84,16 @@ const Footer = () => {
               <Github size={20} />
             </a>
             <a 
-              href="#" 
-              className="p-2 text-foreground/60 hover:text-primary transition-colors rounded-full hover:bg-primary/5"
-              aria-label="Twitter"
+              href="https://www.instagram.com/akshay1694" 
+              className="p-2 text-foreground/60 hover:text-[#E1306C] transition-colors rounded-full hover:bg-primary/5"
+              aria-label="Instagram"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Twitter size={20} />
+              <Instagram size={20} />
             </a>
             <a 
-              href="mailto:your.email@example.com" 
+              href="mailto:helloakshay20@gmail.com" 
               className="p-2 text-foreground/60 hover:text-primary transition-colors rounded-full hover:bg-primary/5"
               aria-label="Email"
             >

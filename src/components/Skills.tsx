@@ -1,6 +1,5 @@
-
 import { useState } from 'react';
-import { BarChart2, Database, FileCode, GitBranch, LineChart, Server, Cpu, Settings, Zap, Table } from 'lucide-react';
+import { BarChart2, Database, FileCode, Zap, Table } from 'lucide-react';
 import AnimatedSection from './ui/AnimatedSection';
 import { cn } from '@/lib/utils';
 
@@ -28,20 +27,13 @@ const skills: Skill[] = [
     icon: <Zap className="h-5 w-5" />,
     description: 'Creating interactive dashboards and reports for business intelligence.'
   },
-  { 
-    name: 'Statistical Analysis', 
-    level: 80, 
-    category: 'data-analytics', 
-    icon: <LineChart className="h-5 w-5" />,
-    description: 'Applying statistical methods to interpret data patterns and trends.'
-  },
   
   // Data Visualization
   { 
     name: 'Data Visualization', 
     level: 85, 
     category: 'data-visualization', 
-    icon: <LineChart className="h-5 w-5" />,
+    icon: <BarChart2 className="h-5 w-5" />,
     description: 'Creating clear, insightful visualizations that tell data stories.'
   },
   { 
@@ -67,20 +59,6 @@ const skills: Skill[] = [
     icon: <Database className="h-5 w-5" />,
     description: 'Writing complex queries for data extraction and manipulation.'
   },
-  { 
-    name: 'MySQL', 
-    level: 80, 
-    category: 'database', 
-    icon: <Database className="h-5 w-5" />,
-    description: 'Managing and querying relational databases.'
-  },
-  { 
-    name: 'PostgreSQL', 
-    level: 75, 
-    category: 'database', 
-    icon: <Database className="h-5 w-5" />,
-    description: 'Experience with advanced database management and queries.'
-  },
   
   // Tools
   { 
@@ -96,21 +74,7 @@ const skills: Skill[] = [
     category: 'tools', 
     icon: <FileCode className="h-5 w-5" />,
     description: 'Statistical computing and graphics for data analysis projects.'
-  },
-  { 
-    name: 'Jupyter Notebook', 
-    level: 85, 
-    category: 'tools', 
-    icon: <FileCode className="h-5 w-5" />,
-    description: 'Creating interactive data analysis documents and visualizations.'
-  },
-  { 
-    name: 'Git/GitHub', 
-    level: 80, 
-    category: 'tools', 
-    icon: <GitBranch className="h-5 w-5" />,
-    description: 'Version control and collaboration for data projects.'
-  },
+  }
 ];
 
 type CategoryLabel = {

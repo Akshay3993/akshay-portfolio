@@ -1,5 +1,5 @@
 
-import { FileText, Github, Linkedin, Mail } from 'lucide-react';
+import { FileText, Github, Linkedin, Mail, Instagram } from 'lucide-react';
 import AnimatedSection from './ui/AnimatedSection';
 
 const About = () => {
@@ -79,7 +79,7 @@ const About = () => {
                     Resume
                   </a>
                   <a 
-                    href="#" 
+                    href="https://linkedin.com/in/akshay-yadav-16ak" 
                     className="btn btn-outline flex items-center gap-2 hover:bg-[#0077B5] hover:text-white hover:border-[#0077B5]"
                     target="_blank" 
                     rel="noopener noreferrer"
@@ -88,7 +88,7 @@ const About = () => {
                     LinkedIn
                   </a>
                   <a 
-                    href="#" 
+                    href="https://github.com/Akshay3993" 
                     className="btn btn-outline flex items-center gap-2 hover:bg-[#333] hover:text-white hover:border-[#333]"
                     target="_blank" 
                     rel="noopener noreferrer"
@@ -97,7 +97,16 @@ const About = () => {
                     GitHub
                   </a>
                   <a 
-                    href="mailto:your.email@example.com" 
+                    href="https://www.instagram.com/akshay1694" 
+                    className="btn btn-outline flex items-center gap-2 hover:bg-[#E1306C] hover:text-white hover:border-[#E1306C]"
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                  >
+                    <Instagram size={18} />
+                    Instagram
+                  </a>
+                  <a 
+                    href="mailto:helloakshay20@gmail.com" 
                     className="btn btn-outline flex items-center gap-2 hover:bg-primary hover:text-primary-foreground hover:border-primary"
                   >
                     <Mail size={18} />
