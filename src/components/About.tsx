@@ -23,8 +23,8 @@ const About = () => {
               <div className="relative bg-white shadow-lg rounded-xl overflow-hidden">
                 <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-blue-400"></div>
                 <img 
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" 
-                  alt="Portrait" 
+                  src="/lovable-uploads/fdbbab7b-0e79-4447-810f-72c7cab22cb8.png" 
+                  alt="Akshay Portrait" 
                   className="w-full h-full object-cover rounded-xl"
                   style={{ maxHeight: '420px' }}
                 />

@@ -101,14 +101,14 @@ const Hero = () => {
             </AnimatedSection>
             
             <AnimatedSection animation="fade-in-left" delay={200}>
-              <h1 className="mb-6 flex items-center">
+              <h1 className="mb-6 flex items-center text-white">
                 <span>{text}</span>
-                <span className={isTyping ? "animate-pulse" : "hidden"}>|</span>
+                <span className={isTyping ? "animate-pulse text-white" : "hidden"}>|</span>
               </h1>
             </AnimatedSection>
             
             <AnimatedSection animation="fade-in-left" delay={400}>
-              <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-xl">
+              <p className="text-lg md:text-xl text-gray-200 mb-8 max-w-xl">
                 Hi, I'm Akshay, a data analyst passionate about turning data into meaningful insights. 
                 Skilled in Power BI, SQL, and Excel, I enjoy solving real-world problems with data-driven solutions.
               </p>
@@ -165,8 +165,8 @@ const Hero = () => {
                   
                   <div className="relative">
                     <img 
-                      src="https://images.unsplash.com/photo-1643057752896-b6fb04a50b85?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" 
-                      alt="Data Visualization" 
+                      src="/lovable-uploads/fdbbab7b-0e79-4447-810f-72c7cab22cb8.png" 
+                      alt="Akshay Portrait" 
                       className="rounded-lg shadow-lg w-full object-cover h-60"
                     />
                     
