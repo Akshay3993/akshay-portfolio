@@ -165,8 +165,8 @@ const Hero = () => {
                   
                   <div className="relative">
                     <img 
-                      src="/placeholder.svg" 
-                      alt="Data Analysis Visualization" 
+                      src="/lovable-uploads/b616d8ee-3185-4b9f-aa46-b9ec844e66e5.png" 
+                      alt="Akshay Portrait" 
                       className="rounded-lg shadow-lg w-full object-cover h-60"
                     />
                     
