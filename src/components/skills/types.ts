@@ -3,7 +3,6 @@ import { ReactNode } from 'react';
 
 export interface Skill {
   name: string;
-  level: number;
   category: 'data-analytics' | 'data-visualization' | 'database' | 'tools';
   icon: ReactNode;
   description: string;

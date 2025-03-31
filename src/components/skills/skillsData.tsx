@@ -7,65 +7,57 @@ export const skills: Skill[] = [
   // Data Analytics
   { 
     name: 'Data Analytics', 
-    level: 90, 
     category: 'data-analytics', 
     icon: <BarChart2 className="h-5 w-5" />,
-    description: 'Experienced in analyzing large datasets to extract actionable insights.'
+    description: 'Experienced in analyzing large datasets to extract actionable insights and drive decision-making.'
   },
   { 
     name: 'Power BI', 
-    level: 85, 
     category: 'data-analytics', 
     icon: <Zap className="h-5 w-5" />,
-    description: 'Creating interactive dashboards and reports for business intelligence.'
+    description: 'Creating interactive dashboards and reports for business intelligence with advanced visualizations.'
   },
   
   // Data Visualization
   { 
     name: 'Data Visualization', 
-    level: 85, 
     category: 'data-visualization', 
     icon: <BarChart2 className="h-5 w-5" />,
-    description: 'Creating clear, insightful visualizations that tell data stories.'
+    description: 'Creating clear, insightful visualizations that tell compelling data stories for various audiences.'
   },
   { 
     name: 'Excel', 
-    level: 90, 
     category: 'data-visualization', 
     icon: <Table className="h-5 w-5" />,
-    description: 'Advanced Excel skills including pivot tables, charts, and formulas.'
+    description: 'Advanced Excel skills including pivot tables, charts, and complex formulas for data analysis.'
   },
   { 
     name: 'Tableau', 
-    level: 75, 
     category: 'data-visualization', 
     icon: <BarChart2 className="h-5 w-5" />,
-    description: 'Building interactive dashboards and data visualizations.'
+    description: 'Building interactive dashboards and data visualizations for clear business insights.'
   },
   
   // Database
   { 
     name: 'SQL', 
-    level: 85, 
     category: 'database', 
     icon: <Database className="h-5 w-5" />,
-    description: 'Writing complex queries for data extraction and manipulation.'
+    description: 'Writing complex queries for data extraction, manipulation, and analysis from relational databases.'
   },
   
   // Tools
   { 
     name: 'Python (Pandas, NumPy)', 
-    level: 80, 
     category: 'tools', 
     icon: <FileCode className="h-5 w-5" />,
-    description: 'Data manipulation, analysis, and visualization using Python libraries.'
+    description: 'Data manipulation, analysis, and visualization using Python libraries including TensorFlow for ML applications.'
   },
   { 
     name: 'R', 
-    level: 70, 
     category: 'tools', 
     icon: <FileCode className="h-5 w-5" />,
-    description: 'Statistical computing and graphics for data analysis projects.'
+    description: 'Statistical computing and graphics for data analysis projects and statistical modeling.'
   }
 ];
 

@@ -9,47 +9,32 @@ interface Certification {
   issuer: string;
   date: string;
   description: string;
-  link?: string;
+  link: string;
+  credentialId: string;
   image: string;
 }
 
 const certifications: Certification[] = [
   {
     id: 1,
-    title: "Google Data Analytics Professional Certificate",
+    title: "Google Data Analytics Specialization",
     issuer: "Google & Coursera",
-    date: "December 2023",
-    description: "Comprehensive program covering data analytics processes, tools, and techniques.",
-    link: "#",
+    date: "2024",
+    description: "Comprehensive program covering data analytics processes, tools, and techniques including data preparation, analysis, and visualization.",
+    link: "https://www.coursera.org/account/accomplishments/specialization/T84BVDYWY87G",
+    credentialId: "T84BVDYWY87G",
     image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
   },
   {
     id: 2,
-    title: "Microsoft Power BI Certification",
-    issuer: "Microsoft",
-    date: "October 2023",
-    description: "Verified skills in creating reports, dashboards, and performing data analysis with Power BI.",
-    link: "#",
-    image: "https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=806&q=80",
-  },
-  {
-    id: 3,
-    title: "SQL for Data Science",
-    issuer: "Coursera",
-    date: "August 2023",
-    description: "Advanced SQL techniques for data extraction, transformation, and analysis.",
-    link: "#",
+    title: "Accenture North America - Data Analytics and Visualization Job Simulation",
+    issuer: "Accenture & Forage",
+    date: "2024",
+    description: "Practical simulation focusing on data analytics and visualization techniques used in professional consulting environments.",
+    link: "https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/Accenture%20North%20America/hzmoNKtzvAzXsEqx8_Accenture%20North%20America_4hafREtE6sr76kTFA_1720266869687_completion_certificate.pdf",
+    credentialId: "DxY9m47zNPECHte7x",
     image: "https://images.unsplash.com/photo-1489875347897-49f64b51c1f8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
-  },
-  {
-    id: 4,
-    title: "Python for Data Analysis",
-    issuer: "Udemy",
-    date: "May 2023",
-    description: "Comprehensive course on data analysis using Python and its data science libraries.",
-    link: "#",
-    image: "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=869&q=80",
-  },
+  }
 ];
 
 const Certifications = () => {
@@ -105,28 +90,31 @@ const Certifications = () => {
                   </div>
                   
                   <div className="p-6 flex-grow flex flex-col bg-white/5">
-                    <div className="flex items-center text-sm text-gray-300 mb-4">
-                      <span className="font-semibold text-white">{cert.issuer}</span>
-                      <span className="mx-2">•</span>
+                    <div className="flex flex-col space-y-2 text-gray-300 mb-4">
                       <div className="flex items-center">
-                        <Calendar className="h-4 w-4 mr-1" />
-                        <span>{cert.date}</span>
+                        <span className="font-semibold text-white">{cert.issuer}</span>
+                        <span className="mx-2">•</span>
+                        <div className="flex items-center">
+                          <Calendar className="h-4 w-4 mr-1" />
+                          <span>{cert.date}</span>
+                        </div>
+                      </div>
+                      <div className="text-sm">
+                        <span className="text-gray-400">Credential ID:</span> {cert.credentialId}
                       </div>
                     </div>
                     
                     <p className="text-gray-300 mb-4 flex-grow">{cert.description}</p>
                     
-                    {cert.link && (
-                      <a 
-                        href={cert.link} 
-                        className="inline-flex items-center text-primary hover:text-primary/80 text-sm font-medium group mt-auto"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <span>View Certificate</span>
-                        <ExternalLink className="h-4 w-4 ml-1 transition-transform group-hover:translate-x-1" />
-                      </a>
-                    )}
+                    <a 
+                      href={cert.link} 
+                      className="inline-flex items-center text-primary hover:text-primary/80 text-sm font-medium group mt-auto"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <span>View Certificate</span>
+                      <ExternalLink className="h-4 w-4 ml-1 transition-transform group-hover:translate-x-1" />
+                    </a>
                   </div>
                 </div>
               </div>

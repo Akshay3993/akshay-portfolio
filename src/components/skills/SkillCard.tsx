@@ -2,6 +2,7 @@
 import React from 'react';
 import { cn } from '@/lib/utils';
 import { Skill, CategoryLabels } from './types';
+import { motion } from 'framer-motion';
 
 interface SkillCardProps {
   skill: Skill;
@@ -13,48 +14,42 @@ interface SkillCardProps {
 
 const SkillCard = ({ 
   skill, 
-  activeSkill, 
   categoryLabels, 
   onMouseEnter, 
   onMouseLeave 
 }: SkillCardProps) => {
+  const categoryLabel = categoryLabels[skill.category];
+  
   return (
-    <div 
-      className="skill-card h-full cursor-pointer shadow-md hover:shadow-xl transition-all duration-300"
+    <motion.div 
+      className="bg-white/10 backdrop-blur-sm p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 h-full"
+      whileHover={{ scale: 1.05, y: -5 }}
       onMouseEnter={() => onMouseEnter(skill)}
       onMouseLeave={onMouseLeave}
     >
-      <div className={cn(
-        "w-14 h-14 rounded-full flex items-center justify-center mb-4 transition-all mx-auto",
-        activeSkill?.name === skill.name 
-          ? categoryLabels[skill.category].bgColor + " text-white transform scale-110"
-          : "bg-white/10 " + categoryLabels[skill.category].color
-      )}>
-        {skill.icon}
+      <div className="flex items-center mb-4">
+        <div className={cn(
+          "w-12 h-12 rounded-full flex items-center justify-center mr-4",
+          categoryLabel.bgColor + " text-white"
+        )}>
+          {skill.icon}
+        </div>
+        <h3 className="text-xl font-semibold text-white">{skill.name}</h3>
       </div>
       
-      <h3 className="text-xl font-semibold text-white mb-2 text-center">{skill.name}</h3>
+      <p className="text-gray-300 text-sm">{skill.description}</p>
       
-      <p className="text-gray-300 text-sm mb-4 text-center">{skill.description}</p>
-      
-      <div className="mt-auto">
-        <div className="flex justify-between items-center mb-1">
-          <span className="text-xs text-gray-400">Proficiency</span>
-          <span className="text-xs text-gray-300">{skill.level}%</span>
-        </div>
-        <div className="h-2 w-full bg-white/10 rounded-full overflow-hidden">
-          <div 
-            className={cn(
-              "h-full rounded-full transition-all duration-1000 shadow-lg",
-              categoryLabels[skill.category].bgColor
-            )}
-            style={{ 
-              width: `${skill.level}%`
-            }}
-          />
-        </div>
+      <div className="mt-4">
+        <span 
+          className={cn(
+            "text-xs font-medium py-1 px-3 rounded-full", 
+            categoryLabel.bgColor + " text-white"
+          )}
+        >
+          {categoryLabel.label}
+        </span>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

@@ -3,6 +3,7 @@ import React from 'react';
 import { Skill, CategoryLabels } from './types';
 import SkillCard from './SkillCard';
 import AnimatedSection from '../ui/AnimatedSection';
+import { motion } from 'framer-motion';
 
 interface SkillsListProps {
   filteredSkills: Skill[];
@@ -17,15 +18,30 @@ const SkillsList = ({
   categoryLabels, 
   setActiveSkill 
 }: SkillsListProps) => {
+  const container = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1
+      }
+    }
+  };
+  
+  const item = {
+    hidden: { opacity: 0, y: 20 },
+    show: { opacity: 1, y: 0 }
+  };
+  
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-      {filteredSkills.map((skill, index) => (
-        <AnimatedSection 
-          key={skill.name} 
-          animation="scale-in" 
-          delay={index * 100} 
-          className="h-full"
-        >
+    <motion.div 
+      className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+      variants={container}
+      initial="hidden"
+      animate="show"
+    >
+      {filteredSkills.map((skill) => (
+        <motion.div key={skill.name} variants={item} className="h-full">
           <SkillCard 
             skill={skill} 
             activeSkill={activeSkill}
@@ -33,9 +49,9 @@ const SkillsList = ({
             onMouseEnter={() => setActiveSkill(skill)}
             onMouseLeave={() => setActiveSkill(null)}
           />
-        </AnimatedSection>
+        </motion.div>
       ))}
-    </div>
+    </motion.div>
   );
 };
 
