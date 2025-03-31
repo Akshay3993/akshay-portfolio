@@ -160,14 +160,14 @@ const Hero = () => {
                     <div className="w-3 h-3 rounded-full bg-red-400"></div>
                     <div className="w-3 h-3 rounded-full bg-yellow-400"></div>
                     <div className="w-3 h-3 rounded-full bg-green-400"></div>
-                    <div className="ml-4 font-mono text-sm text-foreground/70">dashboard.py</div>
+                    <div className="ml-4 font-mono text-sm text-foreground/70">data_analysis.py</div>
                   </div>
                   
                   <div className="relative">
                     <img 
-                      src="/lovable-uploads/a18b5713-4499-4c5a-85c8-900c2f2cb348.png" 
+                      src="/lovable-uploads/b616d8ee-3185-4b9f-aa46-b9ec844e66e5.png" 
                       alt="Akshay Portrait" 
-                      className="rounded-lg shadow-lg w-full object-cover object-center h-[400px]"
+                      className="rounded-lg shadow-lg w-full object-cover h-60"
                     />
                     
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex flex-col justify-end p-4">
@@ -180,11 +180,16 @@ const Hero = () => {
                   </div>
                   
                   <div className="space-y-2 font-mono text-sm">
-                    <p className="text-blue-400">def analyze_financial_data(dataset):</p>
-                    <p className="text-green-400">    # Process transaction history</p>
-                    <p className="text-green-400">    # Generate insights</p>
-                    <p className="text-green-400">    # Visualize patterns</p>
-                    <p className="text-yellow-400">    return {'insights': 'Complete', 'accuracy': 97.5}</p>
+                    <p><span className="text-blue-500">import</span> <span className="text-green-500">pandas</span> <span className="text-blue-500">as</span> <span className="text-green-500">pd</span></p>
+                    <p><span className="text-blue-500">import</span> <span className="text-green-500">numpy</span> <span className="text-blue-500">as</span> <span className="text-green-500">np</span></p>
+                    <p><span className="text-blue-500">import</span> <span className="text-green-500">matplotlib.pyplot</span> <span className="text-blue-500">as</span> <span className="text-green-500">plt</span></p>
+                    <p><span className="text-blue-500">from</span> <span className="text-green-500">sklearn.model_selection</span> <span className="text-blue-500">import</span> <span className="text-green-500">train_test_split</span></p>
+                    <p className="opacity-0 animate-fade-in animate-delay-800">
+                      <span className="text-blue-500">from</span> <span className="text-green-500">tensorflow</span> <span className="text-blue-500">import</span> <span className="text-green-500">keras</span>
+                    </p>
+                    <p className="opacity-0 animate-fade-in animate-delay-800">
+                      <span className="text-purple-500">def</span> <span className="text-yellow-500">analyze_data</span><span>(data):</span>
+                    </p>
                     <div className="w-3 h-6 bg-primary/50 inline-block animate-pulse"></div>
                   </div>
                 </div>
