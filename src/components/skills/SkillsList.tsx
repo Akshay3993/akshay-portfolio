@@ -2,7 +2,6 @@
 import React from 'react';
 import { Skill, CategoryLabels } from './types';
 import SkillCard from './SkillCard';
-import AnimatedSection from '../ui/AnimatedSection';
 import { motion } from 'framer-motion';
 
 interface SkillsListProps {

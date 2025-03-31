@@ -22,7 +22,7 @@ const SkillCard = ({
   
   return (
     <motion.div 
-      className="bg-white/10 backdrop-blur-sm p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 h-full"
+      className="bg-white/10 backdrop-blur-sm p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 h-full border border-white/5"
       whileHover={{ scale: 1.05, y: -5 }}
       onMouseEnter={() => onMouseEnter(skill)}
       onMouseLeave={onMouseLeave}
