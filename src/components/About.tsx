@@ -23,9 +23,9 @@ const About = () => {
               <div className="relative bg-white shadow-lg rounded-xl overflow-hidden">
                 <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-blue-400"></div>
                 <img 
-                  src="/lovable-uploads/fdbbab7b-0e79-4447-810f-72c7cab22cb8.png" 
+                  src="/lovable-uploads/f956a864-cecb-44de-9a39-75fce6ddb49b.png" 
                   alt="Akshay Portrait" 
-                  className="w-full h-full object-cover rounded-xl"
+                  className="w-full h-full object-cover object-top rounded-xl"
                   style={{ maxHeight: '420px' }}
                 />
                 
@@ -70,7 +70,7 @@ const About = () => {
               <div className="pt-4 space-y-4">
                 <div className="flex flex-wrap items-center gap-4">
                   <a 
-                    href="#" 
+                    href="https://drive.google.com/file/d/1C4f2P5Qk9BoG8rGzhBNSMVag3ibCJzVY/view?usp=drive_link" 
                     className="btn btn-outline flex items-center gap-2 hover:bg-primary hover:text-primary-foreground hover:border-primary"
                     target="_blank" 
                     rel="noopener noreferrer"
