@@ -1,4 +1,3 @@
-
 import { useEffect, useState, useRef } from 'react';
 import { ArrowDownCircle, Cpu, Database, BarChart2 } from 'lucide-react';
 import AnimatedSection from './ui/AnimatedSection';
@@ -167,7 +166,7 @@ const Hero = () => {
                     <img 
                       src="/lovable-uploads/b616d8ee-3185-4b9f-aa46-b9ec844e66e5.png" 
                       alt="Akshay Portrait" 
-                      className="rounded-lg shadow-lg w-full object-cover h-60"
+                      className="rounded-lg shadow-lg w-full object-cover h-60 object-top"
                     />
                     
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex flex-col justify-end p-4">
