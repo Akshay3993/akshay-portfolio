@@ -70,7 +70,7 @@ const About = () => {
               <div className="pt-4 space-y-4">
                 <div className="flex flex-wrap items-center gap-4">
                   <a 
-                    href="https://drive.google.com/file/d/1C4f2P5Qk9BoG8rGzhBNSMVag3ibCJzVY/view?usp=drive_link" 
+                    href="https://akshay-resume-162004.s3.eu-north-1.amazonaws.com/Akshay_Yadav_Resume.pdf" 
                     className="btn btn-outline flex items-center gap-2 hover:bg-primary hover:text-primary-foreground hover:border-primary"
                     target="_blank" 
                     rel="noopener noreferrer"
